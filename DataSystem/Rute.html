@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../CSS/rute.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Rute Perjalanan</title>
+</head>
+<body>
+    <h2>Data Rute Perjalanan</h2>
+    
+    <!-- Menu tambah data -->
+    <button onclick="addData()">Tambah Data</button>
+    
+    <!-- Menu search -->
+    <input type="text" id="searchInput" onkeyup="searchData()" placeholder="Cari berdasarkan kota keberangkatan atau tujuan...">
+    
+    <!-- Tabel -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Kota Keberangkatan</th>
+                <th>Kota Tujuan</th>
+                <th>Waktu Keberangkatan</th>
+                <th>Opsi</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Contoh data -->
+            <tr>
+                <td>1</td>
+                <td>Jakarta</td>
+                <td>Bandung</td>
+                <td>08:00</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bandung</td>
+                <td>Surabaya</td>
+                <td>10:30</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

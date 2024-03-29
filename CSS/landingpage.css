@@ -1,0 +1,121 @@
+/* landingpage.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Warna latar belakang putih */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 120px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff; /* Warna teks putih */
+    background-color: #82e0aa; /* Warna latar hijau */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transisi warna latar saat hover */
+}
+
+.button:hover {
+    background-color: #ffffff; /* Warna latar saat dihover */
+    color: #82e0aa; /* Warna teks saat dihover */
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image {
+    width: 1000px;
+    height: 520px;
+}
+
+.headline {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 300px;
+    height: 200px;
+    background-color: #82e0aa; /* Warna kotak hijau */
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease; /* Transisi kotak saat hover */
+}
+
+.box:hover {
+    transform: scale(1.1); /* Perbesar kotak saat hover */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-text {
+    color: #82e0aa; /* Warna teks hijau */
+}
+/* Untuk layar dengan lebar kurang dari atau sama dengan 600px (misalnya, perangkat mobile) */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px; /* Mengurangi padding pada kontainer untuk membuatnya lebih ramping */
+    }
+
+    .logo {
+        width: 80px; /* Mengurangi ukuran logo untuk lebih sesuai dengan perangkat mobile */
+        height: 100px;
+    }
+
+    .buttons {
+        margin-top: 10px; /* Mengurangi margin atas tombol untuk lebih sesuai dengan perangkat mobile */
+    }
+
+    .button {
+        padding: 8px 16px; /* Mengurangi padding tombol untuk lebih sesuai dengan perangkat mobile */
+        margin: 0 5px; /* Mengurangi margin tombol untuk lebih sesuai dengan perangkat mobile */
+    }
+
+    .image {
+        width: 100%; /* Mengatur gambar agar selalu memenuhi lebar layar */
+        height: auto; /* Menjaga aspek rasio gambar */
+    }
+
+    .box {
+        width: 90%; /* Mengatur lebar kotak agar lebih sesuai dengan perangkat mobile */
+        margin: 10px auto; /* Mengatur margin agar kotak terpusat */
+    }
+}
+
+  

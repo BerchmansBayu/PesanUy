@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../CSS/jadwal.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Rute Jadwal</title>
+</head>
+<body>
+    <h2>Data Rute Jadwal</h2>
+    
+    <!-- Menu tambah data -->
+    <button onclick="addData()">Tambah Data</button>
+    
+    <!-- Menu search -->
+    <input type="text" id="searchInput" onkeyup="searchData()" placeholder="Cari berdasarkan tanggal berangkat, bus, atau jurusan...">
+    
+    <!-- Tabel -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Tanggal Berangkat</th>
+                <th>Bus</th>
+                <th>Jumlah Kursi</th>
+                <th>Jurusan</th>
+                <th>Harga Tiket</th>
+                <th>Opsi</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Contoh data -->
+            <tr>
+                <td>1</td>
+                <td>2024-03-28</td>
+                <td>Bus Pariwisata</td>
+                <td>40</td>
+                <td>Jakarta - Bandung</td>
+                <td>Rp 150.000</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2024-04-01</td>
+                <td>Bus Ekonomi</td>
+                <td>30</td>
+                <td>Surabaya - Malang</td>
+                <td>Rp 100.000</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
