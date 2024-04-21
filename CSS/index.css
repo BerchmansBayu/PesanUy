@@ -161,3 +161,35 @@ nav{
       transition: background-color 0.4s;
     }
   }
+  .carousel {
+      display: flex;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+  }
+
+  .carousel img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+  }
+
+  .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      z-index: 999;
+  }
+
+  .carousel-btn-left {
+      left: 10px;
+  }
+
+  .carousel-btn-right {
+      right: 10px;
+  }
