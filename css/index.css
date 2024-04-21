@@ -32,7 +32,7 @@ a{
     text-decoration: none;
 }
 img{
-    width: 70%;
+    width: 90%;
     display: block; /* Menggunakan display: block; untuk menghindari masalah dengan flexbox */
     margin-left: auto; /* Memastikan posisi gambar di tengah secara horizontal */
     margin-right: auto;
@@ -154,7 +154,7 @@ nav{
   @media(width < 900px){
     .header_container img {
         min-width: none;
-        width: 60%; /* Untuk mengatur lebar gambar */
+        width: 90%; /* Untuk mengatur lebar gambar */
         margin-left: auto;
         margin-right: auto;
         display: block; /* Memastikan gambar berada di tengah */
@@ -167,3 +167,16 @@ nav{
     }
 
   }
+  .carousel {
+    position: relative;
+    text-align: center; /* Mengatur gambar agar berada di tengah horizontal */
+}
+
+
+.carousel-buttons {
+    position: absolute;
+    bottom: 10px; /* Atur jarak dari bawah sesuai kebutuhan */
+    left: 50%;
+    transform: translateX(-50%);
+}
+

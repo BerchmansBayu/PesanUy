@@ -221,13 +221,3 @@ tfoot{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
-    .sidebar {
-        width: 100px; /* Mengubah lebar sidebar untuk layar yang lebih kecil */
-        padding: 0 1rem; /* Mengubah padding untuk layar yang lebih kecil */
-    }
-
-    .menu a {
-        font-size: 12px; /* Mengurangi ukuran font untuk layar yang lebih kecil */
-    }
-}
