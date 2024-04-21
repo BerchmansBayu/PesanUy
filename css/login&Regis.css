@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #dfdfdf;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .logo-wrapper {
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #2ecc71;
+    margin-right: 0px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: rotate(360deg);
+  }
+  
+  h1 {
+    color: #2ecc71;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  form {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(98, 246, 93, 0.1);
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  form label {
+    display: none;
+  }
+  input[type="email"],
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  input[type="email"]:focus::placeholder,
+  input[type="text"]:focus::placeholder,
+  input[type="password"]:focus::placeholder {
+    color: transparent;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .footer {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .footer-text {
+    color: #777;
+    font-size: 14px;
+  }
+  
