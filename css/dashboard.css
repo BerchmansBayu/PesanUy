@@ -32,11 +32,12 @@ body{
     height:80px ;
     padding: 16px;
 }
-.menu{
-    height: 88%;
-    position: relative;  
+.menu {
+    height: calc(100% - 80px); /* Ubah 88% menjadi 100% - 80px */
+    position: relative;
     list-style: none;
     padding: 0;
+    background: rgb(30, 144, 255); /* Tambahkan latar belakang biru di sini */
 }
 .menu li {
     padding: 0.8rem 1rem; /* Mengurangi padding atas dan bawah */
@@ -57,16 +58,18 @@ body{
     gap: 1.5rem;
 }
 .menu a span {
-   overflow: hidden; 
-}
+    overflow: hidden; 
+    white-space: nowrap; /* Untuk mencegah pemotongan teks */
+ }
 .menu a i {
     font-size: 1.2rem;
 }
-.logout{
+.logout {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    background: rgb(30, 144, 255); /* Tambahkan latar belakang biru di sini */
 }
 .main_content{
     position: relative;
@@ -178,19 +181,24 @@ body{
 .dark-orange{
     background: orange;
 }
-.tabular_wrapper{
+.tabular_wrapper {
     background: #fff;
     margin-top: 1rem;
     border-radius: 10px;
     padding: 2rem;
+    max-width: 1200px; /* Atur lebar maksimum container tabel */
+    margin: 0 auto; /* Untuk menengahkan container */
 }
 .table_container{
     width: 100%;
+    overflow-x: auto;
 }
-table{
+table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed; /* Tambahkan properti table-layout */
 }
+
 thead{
     background: rgb(30, 144, 255);
     color: #fff;
@@ -219,5 +227,99 @@ tfoot{
     color:green;
     background: none;
     cursor: pointer;
+}
+
+.add-data-btn {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-data-btn:hover {
+    background-color: rgb(30, 144, 255);
+    color: white;
+}
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for depth effect */
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.popup-header h2 {
+    margin: 0;
+}
+
+.close-btn {
+        display: none;
+}
+
+
+
+.popup-body input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.popup-content button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff; /* Warna tombol */
+    color: white;
+    cursor: pointer;
+    margin-right: 10px; /* Jarak antar tombol */
+}
+
+.popup-content button:hover {
+    background-color: #0056b3; /* Warna tombol saat dihover */
+}
+
+.delete-all-btn {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-all-btn:hover {
+    background-color: rgb(30, 144, 255);
+    color: white;
 }
 

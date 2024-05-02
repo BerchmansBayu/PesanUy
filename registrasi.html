@@ -1,33 +1,53 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/login&Regis.css" />
-    <title>Register</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>LoginUser</title>
 </head>
 <body>
-	<div class="container">
-		<form method="post" action="LoginUser.html" class="form-container">
-		  <div class="header">
-			<div class="logo-wrapper">
-			  <img src="aset/logo.png" alt="Logo" class="logo" width="80" height="80">
-			  <h1>Register</h1>
-			</div>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Email"><br>
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" placeholder="Username"><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" placeholder="Password"><br><br>
-            <button type="submit">Register</button> 
-		  </div>
-		</form>
-		<div class="footer">
-			<div class="footer-text">Copyright &copy; 2023 bayu jaya2218034</div>
-		  </div>
-		</div>
+    <div class="container">
+        <div class="forms">
+            <div class="form registrasi">
+                <div class="header">
+                    <div class="logo-wrapper">
+                        <img src="aset/logo.png" alt="Logo" class="logo" width="80" height="80">
+                    </div>
+                    <span class="title">REGISTER</span>
+                    <form action="#">
+                        <div class="input-field">
+                            <input type="text" placeholder="Masukan Username" required>
+                            <i class="uil uil-user icon"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Masukan Email" required>
+                            <i class="uil uil-envelope-alt icon"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" placeholder="Masukan Password" required>
+                            <i class="uil uil-padlock icon"></i>
+                        </div>
+                        <div class="checkbox-text">
+                            <div class="checkbox-content">
+                                <input type="checkbox" id="logCheck">
+                                <label for="logCheck" class="text">I accept all terms & conditions</label>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Regis Now" id="regisButton">
+                        </div>
+                    </form>
+                    <div class="login-signup">
+                        <span class="text">Sudah Punya Akun ? <a href="../Tiket Bus (PesanUy)/login.html" class="text signup-text">Login Sekarang</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="../Tiket Bus (PesanUy)/java/registrasi.js"> </script>
 </body>
 </html>
