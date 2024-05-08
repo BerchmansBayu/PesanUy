@@ -51,7 +51,7 @@
         </a>  
     </li>
     <li class="logout">
-        <a href="login.html">
+        <a href="login.php">
             <i class="ri-logout-circle-line"></i>
             <span>Exit</span>
         </a>  

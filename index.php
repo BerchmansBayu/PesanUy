@@ -45,7 +45,7 @@
 
     <nav>
         <div class="nav_logo">PesanUy</div>
-        <a href="../Tiket Bus (PesanUy)/login.html" class="btn">Masuk/Daftar</a>
+        <a href="login.php" class="btn">Masuk/Daftar</a>
     </nav>
     <header class="section_container header_container">
         <h1 class="section_header">Temukan dan Booking Sekarang<br />Dapatkan Pengalaman Terbaik Bersama PesanUy</h1>
