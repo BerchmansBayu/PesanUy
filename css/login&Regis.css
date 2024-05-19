@@ -217,11 +217,3 @@ body {
         opacity: 1;
     }
 }
-
-        .flash-message {
-            padding: 10px;
-            background-color:#4070f4 ;
-            color: white;
-            text-align: center;
-            margin-bottom: 10px;
-        }
