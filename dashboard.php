@@ -1,3 +1,13 @@
+<?php 
+include 'koneksi.php';
+	session_start();
+ 
+	// cek apakah yang mengakses halaman ini sudah login
+	if($_SESSION['username']==""){
+		header("location:login.php");
+	}
+ 
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 <!--=== CSS ===-->
 <link rel="stylesheet" href="./css/dashboard.css">
-    <title>Dashboard Admin</title>
+    <title>Dashboard <?= $_SESSION['username'];?></title>
     </head>
     <body> 
 
@@ -151,8 +161,8 @@
                 <div class="tabular_wrapper">
                     <h3 class="main_title">Data Bus</h3>
                       <div class="table_container">
-                        <button class="delete-all-btn">Wipe Data</button>
-                        <button class="add-data-btn">Add Data</button> 
+                        <a class="btn btn-danger" href="hapusall.php">Wipe Data</a>
+                        <a class="btn btn-primary" href="tambah.php">Add Data</a> 
                         <table>
                             <thead>
                                 <tr>
@@ -164,34 +174,22 @@
                                 </tr>
                             </thead>
                                 <tbody>
+                                    <?php
+                                $sql = "SELECT * FROM tb_bus";
+  $result = mysqli_query($koneksi, $sql);
+  while($row = mysqli_fetch_array($result)){
+  ?>
                                   <tr>
-                                    <td>Jkt01</td> 
-                                    <td>Purnama</td> 
-                                    <td>Ekonomi</td>
-                                    <td>20</td>
-                                    <td><button>Edit</button> <button>Delete</button></td>
+                                    <td><?= $row['kode_bus'];?></td> 
+                                    <td><?= $row['nama_bus'];?></td> 
+                                    <td><?= $row['kelas_bus'];?></td>
+                                    <td><?= $row['jumlah_kursi'];?></td>
+                                    <td>
+                                    <a href="edit.php?id=<?php echo $row['id_bus']; ?>">EDIT</a>
+					<a href="hapus.php?id=<?php echo $row['id_bus']; ?>">HAPUS</a>
+                                    </td>
                                   </tr>  
-                                  <tr>
-                                    <td>Mlng01</td> 
-                                    <td>Mekar Sari</td> 
-                                    <td>Bisnis</td>
-                                    <td>25</td>
-                                    <td><button>Edit</button> <button>Delete</button></td>
-                                  </tr> 
-                                  <tr>
-                                    <td>Bl01</td> 
-                                    <td>Ksatria Kijang</td> 
-                                    <td>Eksekutif</td>
-                                    <td>30</td>
-                                    <td><button>Edit</button> <button>Delete</button></td>
-                                  </tr> 
-                                  <tr>
-                                  <td>Jyg01</td> 
-                                  <td>Jaya Kencana</td> 
-                                  <td>VIP</td>
-                                  <td>15</td>
-                                  <td><button>Edit</button> <button>Delete</button></td>
-                                </tr>
+                                 <?php } ?>
                                 </tbody>
                         </table> 
                       </div>
@@ -211,8 +209,8 @@
                 <div class="tabular_wrapper">
                     <h3 class="main_title">Data Terminal</h3>
                       <div class="table_container">
-                        <button class="delete-all-btn">Wipe Data</button>
-                        <button class="add-data-btn">Add Data</button> 
+                      <a class="btn btn-danger" href="hapusallterminal.php">Wipe Data</a>
+                        <a class="btn btn-primary" href="tambahterminal.php">Add Data</a> 
                         <table>
                             <thead>
                                 <tr>
@@ -223,24 +221,22 @@
                                 </tr>
                             </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>Kampung Melayu</td> 
-                                    <td>KM</td> 
-                                    <td>Jakarta</td>
-                                    <td><button>Edit</button> <button>Delete</button></td>
+                                <?php
+                                $sql1 = "SELECT * FROM tb_terminal";
+  $result1 = mysqli_query($koneksi, $sql1);
+  while($row1 = mysqli_fetch_array($result1)){
+  ?>
+                                 <tr>
+                                    <td><?= $row1['kode_terminal'];?></td> 
+                                    <td><?= $row1['nama_terminal'];?></td> 
+                                    <td><?= $row1['kota'];?></td>
+                                    <td>
+                                    <a href="editterminal.php?id=<?php echo $row1['id_terminal']; ?>">EDIT</a>
+					<a href="hapusterminal.php?id=<?php echo $row1['id_terminal']; ?>">HAPUS</a>
+                                    </td>
                                   </tr>  
-                                  <tr>
-                                    <td>Pulo Gadung</td> 
-                                    <td>PG</td> 
-                                    <td>Jakarta</td>
-                                    <td><button>Edit</button> <button>Delete</button></td>
-                                  </tr> 
-                                  <tr>
-                                    <td>Ladungsari</td> 
-                                    <td>LS</td> 
-                                    <td>Malang</td>
-                                    <td><button>Edit</button> <button>Delete</button></td>
-                                  </tr> 
+                                 <?php } ?>
+                                 
                                 </tbody>
                         </table> 
                       </div>
@@ -260,8 +256,8 @@
                 <div class="tabular_wrapper">
                     <h3 class="main_title">Data Rute</h3>
                       <div class="table_container">
-                        <button class="delete-all-btn">Wipe Data</button>
-                        <button class="add-data-btn">Add Data</button> 
+                      <a class="btn btn-danger" href="hapusallrute.php">Wipe Data</a>
+                        <a class="btn btn-primary" href="tambahrute.php">Add Data</a>
                         <table>
                             <thead>
                                 <tr>
@@ -277,17 +273,26 @@
                                 </tr>
                             </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>2024-04-1</td> 
-                                    <td>2024-04-02</td> 
-                                    <td>07.00</td>
-                                    <td>10.00</td>
-                                    <td>Kampung Melayu</td>
-                                    <td>Ladungsari</td>
-                                    <td>Jaya Kencana</td>
-                                    <td>500.000</td>
-                                    <td><button>Edit</button> <button>Delete</button></td>
+                                <?php
+                                $sql2 = "SELECT * FROM tb_rute INNER JOIN tb_bus ON tb_bus.id_bus=tb_rute.id_bus INNER JOIN tb_terminal ON tb_terminal.id_terminal=tb_rute.id_terminal";
+  $result2 = mysqli_query($koneksi, $sql2);
+  while($row2 = mysqli_fetch_array($result2)){
+  ?>
+                               <tr>
+                                    <td><?= $row2['tanggal_berangkat'];?></td> 
+                                    <td><?= $row2['tanggal_tiba'];?></td> 
+                                    <td><?= $row2['waktu_berangkat'];?></td>
+                                    <td><?= $row2['waktu_tiba'];?></td> 
+                                    <td><?= $row2['nama_terminal'];?></td> 
+                                    <td><?= $row2['tujuan'];?></td>
+                                    <td><?= $row2['nama_bus'];?></td> 
+                                    <td><?= $row2['harga'];?></td>
+                                    <td>
+                                    <a href="editrute.php?id=<?php echo $row2['id_rute']; ?>">EDIT</a>
+					<a href="hapusrute.php?id=<?php echo $row2['id_rute']; ?>">HAPUS</a>
+                                    </td>
                                   </tr>  
+                                 <?php } ?>
                                 </tbody>
                         </table> 
                       </div>
@@ -307,7 +312,7 @@
                 <div class="tabular_wrapper">
                     <h3 class="main_title">Data Pengguna</h3>
                       <div class="table_container">
-                        <button class="delete-all-btn">Wipe Data</button>                   
+                      <a class="btn btn-danger" href="hapusallpengguna.php">Wipe Data</a>                
                         <table>
                             <thead>
                                 <tr>
@@ -317,21 +322,21 @@
                                 </tr>
                             </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>Bayu Jaya</td> 
-                                    <td>bayu@gmail.com</td> 
-                                    <td><button>Delete</button></td>
+                                <?php
+                                $sql3 = "SELECT * FROM tb_pengguna";
+  $result3 = mysqli_query($koneksi, $sql3);
+  while($row3 = mysqli_fetch_array($result3)){
+  ?>
+                               <tr>
+                                    <td><?= $row3['nama_pengguna'];?></td> 
+                                    <td><?= $row3['email_pengguna'];?></td> 
+                                    <td>
+                                    <a href="editpengguna.php?id=<?php echo $row3['id_pengguna']; ?>">EDIT</a>
+					<a href="hapuspengguna.php?id=<?php echo $row3['id_pengguna']; ?>">HAPUS</a>
+                                    </td>
                                   </tr>  
-                                  <tr>
-                                    <td>Markus</td> 
-                                    <td>markus@gmail.com</td> 
-                                    <td><button>Delete</button></td>
-                                  </tr>  
-                                  <tr>
-                                    <td>matius Jaya</td> 
-                                    <td>matius@gmail.com</td> 
-                                    <td><button>Delete</button></td>
-                                  </tr>  
+                                 <?php } ?>
+                                  
                                 </tbody>
                         </table> 
                       </div>
@@ -352,32 +357,35 @@
                 <div class="tabular_wrapper">
                     <h3 class="main_title">Data Pesanan</h3>
                       <div class="table_container">
-                        <button class="delete-all-btn">Wipe Data</button>
+                      <a class="btn btn-danger" href="hapusallpesanan.php">Wipe Data</a>    
                       <table>
                           <thead>
                               <tr>
                                   <th>Pembeli</th>
                                   <th>Waktu</th>
                                   <th>Harga</th>
+                                  <th>Total Harga</th>
                                   <th>Status</th>
                                   <th>Aksi</th>                                                 
                               </tr>
                           </thead>
                               <tbody>
-                                <tr>
-                                  <td>Makrus</td> 
-                                  <td>1 April 2024 17.05</td> 
-                                  <td>Rp 300.000</td>
-                                  <td>Terbayar</td>
-                                  <td><button>Delete</button></td>
-                                </tr>  
-                                <tr>
-                                  <td>Matius</td> 
-                                  <td>4 April 2024 18.05</td> 
-                                  <td>Rp 300.000</td>
-                                  <td>Terbayar</td>
-                                  <td><button>Delete</button></td>
-                                </tr> 
+                              <?php
+                                $sql2 = "SELECT * FROM tb_pesanan INNER JOIN tb_rute ON tb_rute.id_rute=tb_pesanan.id_rute INNER JOIN tb_pengguna ON tb_pengguna.id_pengguna=tb_pesanan.id_pengguna";
+  $result2 = mysqli_query($koneksi, $sql2);
+  while($row2 = mysqli_fetch_array($result2)){
+  ?>
+                               <tr>
+                                    <td><?= $row2['nama_pengguna'];?></td> 
+                                    <td><?= $row2['waktu_pesanan'];?></td> 
+                                    <td><?= $row2['harga'];?></td>
+                                    <td><?= $row2['total'];?></td> 
+                                    <td><?= $row2['status'];?></td> 
+                                    <td>
+					<a href="hapuspesanan.php?id=<?php echo $row2['id_pesanan']; ?>">HAPUS</a>
+                                    </td>
+                                  </tr>  
+                                 <?php } ?>
                               </tbody>
                       </table>  
                       </div>

@@ -16,27 +16,28 @@
                         <img src="aset/logo.png" alt="Logo" class="logo" width="80" height="80">
                     </div>
                     <span class="title">REGISTER</span>
-                    <form action="#">
+                    <form action="register-proses.php" method="post">
                         <div class="input-field">
-                            <input type="text" placeholder="Masukan Username" required>
+                            <input type="text" name="nama_pengguna" placeholder="Masukan Username" required>
                             <i class="uil uil-user icon"></i>
                         </div>
                         <div class="input-field">
-                            <input type="text" placeholder="Masukan Email" required>
+                            <input type="text" name="email_pengguna" placeholder="Masukan Email" required>
                             <i class="uil uil-envelope-alt icon"></i>
                         </div>
                         <div class="input-field">
-                            <input type="password" placeholder="Masukan Password" required>
+                            <input type="password" name="password" placeholder="Masukan Password" required>
                             <i class="uil uil-padlock icon"></i>
                         </div>
-                        <div class="checkbox-text">
-                            <div class="checkbox-content">
-                                <input type="checkbox" id="logCheck">
-                                <label for="logCheck" class="text">I accept all terms & conditions</label>
-                            </div>
+                        <div class="input-field">
+                           <select name="level"required>
+                            <option value="Admin">Admin</option>
+                            <option value="Pengguna">Pengguna</option>
+                           </select>
+                           
                         </div>
                         <div class="button">
-                            <input type="submit" value="Regis Now" id="regisButton">
+                            <input type="submit" name="registrasi" value="Regis Now" id="regisButton">
                         </div>
                     </form>
                     <div class="login-signup">

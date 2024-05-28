@@ -1,10 +1,20 @@
+<?php 
+include 'koneksi.php';
+	session_start();
+ 
+	// cek apakah yang mengakses halaman ini sudah login
+	if($_SESSION['username']==""){
+		header("location:login.php");
+	}
+ 
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css" />
-    <title>Index | PesanUy</title>
+    <title><?= $_SESSION['username'];?> | PesanUy</title>
 </head>
 <body>
 
@@ -45,7 +55,14 @@
 
     <nav>
         <div class="nav_logo">PesanUy</div>
-        <a href="login.php" class="btn">Masuk/Daftar</a>
+        <?php
+        if(isset($_SESSION['username'])) {
+            echo '<div class="nav_user">Welcome, ' . htmlspecialchars($_SESSION['username']) . '</div>';
+            echo '<a href="logout.php" class="btn">Logout</a>';
+        } else {
+            echo '<a href="login.php" class="btn">Masuk/Daftar</a>';
+        }
+        ?>
     </nav>
     <header class="section_container header_container">
         <h1 class="section_header">Temukan dan Booking Sekarang<br />Dapatkan Pengalaman Terbaik Bersama PesanUy</h1>
