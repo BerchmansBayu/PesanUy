@@ -64,17 +64,55 @@ include 'koneksi.php';
         }
         ?>
     </nav>
+    <style>
+        .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-inner img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Position the buttons 10px from the right edge */
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    transform: translateY(-50%);
+}
+
+.carousel-buttons .btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px; /* Add space between buttons */
+    cursor: pointer;
+}
+
+    </style>
     <header class="section_container header_container">
         <h1 class="section_header">Temukan dan Booking Sekarang<br />Dapatkan Pengalaman Terbaik Bersama PesanUy</h1>
         <div class="carousel">
-            <img src="aset/EKONOMI.png" alt="header" />
-            <img src="aset/BISNIS.png" alt="header" />
-            <img src="aset/EKSEKUTIF.png" alt="header" />
-            <div class="carousel-buttons">
-                <button class="btn btn-prev">&#10094;</button>
-                <button class="btn btn-next">&#10095;</button>
-            </div>
-        </div>
+    <div class="carousel-inner">
+        <img src="aset/EKONOMI.png" alt="header" />
+        <img src="aset/BISNIS.png" alt="header" />
+        <img src="aset/EKSEKUTIF.png" alt="header" />
+    </div>
+    <div class="carousel-buttons">
+    </div>
+    <button class="btn btn-prev">&#10094;</button>
+        <button class="btn btn-next">&#10095;</button>
+</div>
         
         
     </header>
@@ -127,7 +165,35 @@ include 'koneksi.php';
     </section>
     <script src="../Tiket Bus (PesanUy)/java/index.js"> </script>
     
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.carousel-inner');
+    const prevButton = document.querySelector('.btn-prev');
+    const nextButton = document.querySelector('.btn-next');
+    const images = document.querySelectorAll('.carousel-inner img');
+    let currentIndex = 0;
 
+    function showSlide(index) {
+        if (index >= images.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = images.length - 1;
+        } else {
+            currentIndex = index;
+        }
+        carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', function() {
+        showSlide(currentIndex + 1);
+    });
+
+    prevButton.addEventListener('click', function() {
+        showSlide(currentIndex - 1);
+    });
+});
+
+</script>
 
 </body>
 </html>

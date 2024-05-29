@@ -85,14 +85,6 @@ include 'koneksi.php';
     <h3 class="main_title">Informasi Data</h3>
     <div class="card_wrapper">
         
-
-        
-        
-        
-
-        
-
-        
         </div>
     </div>
    </div>

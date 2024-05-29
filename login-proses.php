@@ -12,7 +12,6 @@ if(isset($_POST['registrasi'])) {
   if(mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
 
-    // Verify the password using password_verify
     
         if ($row['level'] == "Admin") {
             $_SESSION['username'] = $row['nama_pengguna'];
@@ -39,7 +38,6 @@ if(isset($_POST['registrasi'])) {
     </script>
     ";
   }
-
   mysqli_close($koneksi);
 }
 ?>

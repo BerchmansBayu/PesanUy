@@ -46,9 +46,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    
+    </div>    
     <script src="../Tiket Bus (PesanUy)/java/registrasi.js"> </script>
 </body>
 </html>
